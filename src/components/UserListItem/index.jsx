@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import styles from "./UserListItem.module.css";
 
 class UserListItem extends Component {
   constructor(props) {
@@ -13,12 +14,11 @@ class UserListItem extends Component {
     return (
       <ul>
         {users.map((u) => (
-          <li key={u.id}>
+          <li className={styles.container} key={u.id}>
             <img src={u.imgSrc} alt={u.firstName} />
-            <div>
-              <h1>{`${u.firstName} ${u.lastName}`}</h1>
-              <span>{u.age}</span>
-            </div>
+
+            <h1>{`${u.firstName} ${u.lastName}`}</h1>
+            <span>{u.age}</span>
           </li>
         ))}
       </ul>
