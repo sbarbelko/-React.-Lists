@@ -8,11 +8,8 @@ export default function UsersList() {
       firstName: "Анна",
       lastName: "Коваленко",
       age: 24,
-      gender: "female",
-      email: "anna.kovalenko@example.com",
       imgSrc:
         "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&auto=format&fit=crop&q=80",
-      isSelected: false,
     },
     {
       id: 2,

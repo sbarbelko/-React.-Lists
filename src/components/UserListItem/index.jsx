@@ -13,7 +13,13 @@ class UserListItem extends Component {
     return (
       <ul>
         {users.map((u) => (
-          <li>{u.firstName}</li>
+          <li key={u.id}>
+            <img src={u.imgSrc} alt={u.firstName} />
+            <div>
+              <h1>{`${u.firstName} ${u.lastName}`}</h1>
+              <span>{u.age}</span>
+            </div>
+          </li>
         ))}
       </ul>
     );
