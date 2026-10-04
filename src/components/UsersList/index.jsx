@@ -20,55 +20,40 @@ class Index extends Component {
           firstName: "Максим",
           lastName: "Шевченко",
           age: 30,
-          gender: "male",
-          email: "max.shevchenko@example.com",
           imgSrc:
             "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&q=80",
-          isSelected: false,
         },
         {
           id: 3,
           firstName: "Олена",
           lastName: "Бойко",
           age: 28,
-          gender: "female",
-          email: "olena.boyko@example.com",
           imgSrc:
             "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&auto=format&fit=crop&q=80",
-          isSelected: false,
         },
         {
           id: 4,
           firstName: "Дмитро",
           lastName: "Ткаченко",
           age: 35,
-          gender: "male",
-          email: "dmytro.tkachenko@example.com",
           imgSrc:
             "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&auto=format&fit=crop&q=80",
-          isSelected: false,
         },
         {
           id: 5,
           firstName: "Софія",
           lastName: "Кравченко",
           age: 22,
-          gender: "female",
-          email: "sofiya.kravchenko@example.com",
           imgSrc:
             "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80",
-          isSelected: false,
         },
         {
           id: 6,
           firstName: "Андрій",
           lastName: "Мельник",
           age: 41,
-          gender: "male",
-          email: "andriy.melnyk@example.com",
           imgSrc:
             "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&auto=format&fit=crop&q=80",
-          isSelected: false,
         },
       ],
     };
@@ -81,10 +66,15 @@ class Index extends Component {
 
   render() {
     return (
-      <UserListItem
-        users={this.state.users}
-        deleteFromUsers={this.deleteFromUsers}
-      />
+      <ul>
+        {this.state.users.map((u) => (
+          <UserListItem
+            key={u.id}
+            users={u}
+            deleteFromUsers={this.deleteFromUsers}
+          />
+        ))}
+      </ul>
     );
   }
 }
