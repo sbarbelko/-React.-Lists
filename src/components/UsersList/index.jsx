@@ -1,7 +1,7 @@
 import UserListItem from "../UserListItem";
 import React, { Component } from "react";
 
-class Index extends Component {
+class UsersList extends Component {
   constructor(props) {
     super(props);
 
@@ -79,4 +79,4 @@ class Index extends Component {
   }
 }
 
-export default Index;
+export default UsersList;
