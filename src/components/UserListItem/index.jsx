@@ -1,29 +1,26 @@
-import React, { Component } from "react";
 import styles from "./UserListItem.module.css";
 
-class UserListItem extends Component {
-  constructor(props) {
-    super(props);
+export default function UserListItem(props) {
+  const users = props.users;
 
-    this.state = {};
+  function deleteUser(id) {
+    props.deleteFromUsers(id);
   }
 
-  render() {
-    const users = this.props.users;
-
-    return (
-      <ul>
-        {users.map((u) => (
-          <li className={styles.container} key={u.id}>
-            <img src={u.imgSrc} alt={u.firstName} />
-
+  return (
+    <ul>
+      {users.map((u) => (
+        <li className={styles.container} key={u.id}>
+          <img src={u.imgSrc} alt={u.firstName} />
+          <div>
             <h1>{`${u.firstName} ${u.lastName}`}</h1>
             <span>{u.age}</span>
-          </li>
-        ))}
-      </ul>
-    );
-  }
+          </div>
+          <button onClick={() => deleteUser(u.id)}>
+            <i className="fa-regular fa-trash-can"></i>
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
 }
-
-export default UserListItem;
