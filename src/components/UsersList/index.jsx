@@ -1,4 +1,5 @@
 import React from "react";
+import UserListItem from "../UserListItem";
 
 export default function UsersList() {
   const users = [
@@ -69,12 +70,5 @@ export default function UsersList() {
       isSelected: false,
     },
   ];
-
-  return (
-    <ul>
-      {users.map((u) => (
-        <li>{u.firstName}</li>
-      ))}
-    </ul>
-  );
+  return <UserListItem users={users} />;
 }
